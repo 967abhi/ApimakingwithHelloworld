@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const db = require("./db");
 const bodyParser = require("body-parser");
-
+require("dotenv").config();
 app.use(bodyParser.json()); //req.biody
 app.get("/", (req, res) => {
   res.send("Welcome to my Hotel... How i can help You ? we have list of menus");
