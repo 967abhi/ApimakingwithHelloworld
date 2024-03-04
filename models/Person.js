@@ -49,7 +49,7 @@ personSchema.pre("save", async function (next) {
     const salt = await bcrypt.genSalt(10);
     //hash password
     const hashPassword = await bcrypt.hash(person.password, salt);
-    person.password = hashedPassword;
+    person.password = hashPassword;
 
     next();
   } catch (err) {
